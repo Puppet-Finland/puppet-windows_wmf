@@ -26,11 +26,6 @@
 class windows_wmf
 {
 
-  reboot { 'dsc_reboot':
-    message => 'DSC has requested a reboot',
-    when    => 'pending',
-  }
-
   $dotnetkb = $::facts['os']['release']['full'] ? {
     '7'       => 'KB4033342',
     '8.1'     => 'KB4033369',

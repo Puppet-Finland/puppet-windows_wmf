@@ -75,8 +75,6 @@ class windows_wmf(
     unless   => "cmd.exe /c C:\\Windows\\System32\\wbem\\WMIC.exe qfe | findstr ${kb_number}",
     path     => 'C:/Windows/System32/',
     provider => 'windows',
-    #require  => Windows_updates::kb['.NET 4.7.1'],
-    
   } ~> 
 
   reboot { "Reboot after installation of WMF version ${version}": }

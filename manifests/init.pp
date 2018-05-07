@@ -38,7 +38,7 @@ class windows_wmf(
     kb     => $dotnetkb,
   }
 
-  unless (versioncmp($wmfmajorversion, '5') > 0 or versioncmp($wmfmajorversion, '5') == 1 ) { 
+  unless (versioncmp("${facts['powershell_version']}", '5') > 0 or versioncmp("${facts['powershell_version']}", '5') == 1 ) { 
 
     unless has_key($windows_wmf::params::urls, "${version}") {
       fail("This version of WMF is not supported: ${version}")
